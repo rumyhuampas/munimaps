@@ -2,6 +2,7 @@
 jQuery(document).ready(function() {
     var markersArray = [];
     var map = null;
+    var selectedMarker = null;
         
     function initMap() {
 		var mapOptions = {
@@ -12,15 +13,15 @@ jQuery(document).ready(function() {
 	    map = new google.maps.Map(document.getElementById("map_canvas"),
 	        mapOptions);
 	        
-	    /*google.maps.event.addListener(map, "click", function(event)
+	    google.maps.event.addListener(map, "click", function(event)
 	    {
 	        // place a marker
 	        //placeMarker(event.latLng);
 	
 	        // display the lat/lng in your form's lat/lng fields
-	        //document.getElementById("latFld").value = event.latLng.lat();
-	        //document.getElementById("lngFld").value = event.latLng.lng();
-	    });*/
+	        document.getElementById("latFld").value = event.latLng.lat();
+	        document.getElementById("lngFld").value = event.latLng.lng();
+	    });
 	}
         
     function placePostes() {
@@ -48,7 +49,11 @@ jQuery(document).ready(function() {
         });
         
         google.maps.event.addListener(marker, 'click', function() {
+        	if(selectedMarker != null){
+        		selectedMarker.setIcon('assets/images/markers/electricblue/powerlinepole.png');
+        	}
         	marker.setIcon('assets/images/markers/electricyellow/powerlinepole.png');
+        	selectedMarker = marker;
 			jQuery.post( 
 		    	'/maps/home/getPoste/',
 		    	{
