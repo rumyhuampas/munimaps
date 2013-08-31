@@ -1270,6 +1270,26 @@ ul.pagination li a:active{
 background-position:center;
 }
 
+/*CONTEXTMENU*/
+/*	start styles for the ContextMenu	*/
+.context_menu{
+	background-color:white;
+	border:1px solid gray;
+}
+.context_menu_item{
+	padding:3px 6px;
+}
+.context_menu_item:hover{
+	background-color:#CCCCCC;
+}
+.context_menu_separator{
+	background-color:gray;
+	height:1px;
+	margin:0;
+	padding:0;
+}
+/*	end styles for the ContextMenu	*/
+
 /*RESPONSIVE*/
 @media only screen and (max-width: 1080px) {
 

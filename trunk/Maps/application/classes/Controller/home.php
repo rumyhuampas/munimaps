@@ -24,7 +24,9 @@ class Controller_Home extends Controller {
 	}
 	
 	public function action_getPoste(){
-		echo json_encode(Helpers_Poste::get($_POST['num'])->Num);
+		$poste = Helpers_Poste::get($_POST['num']);
+		$jsonarray = array('Num' => $poste->Num, 'Lat' => $poste->Lat, 'Long' => $poste->Long);
+		echo json_encode($jsonarray);
 	}
 
 } // End Welcome
