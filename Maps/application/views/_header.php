@@ -55,6 +55,8 @@
 		<script src=<?php echo URL::base()."/scripts/main.js" ?> type="text/javascript"></script>
 		
 		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDJfxgZU6cIXf7VsYlZhva0RgrIWJFfneM&sensor=false" type="text/javascript"></script>
+		<script src=<?php echo URL::base()."/scripts/maps.contextmenu.js" ?> type="text/javascript"></script>
+		<script src=<?php echo URL::base()."/scripts/maps.infobox.js" ?> type="text/javascript"></script>
 	</head>
 	
 	<body>
